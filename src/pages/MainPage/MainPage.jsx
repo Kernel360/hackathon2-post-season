@@ -6,7 +6,6 @@ import MainCarouselSection from './components/MainCarouselSection'
 function MainPage() {
   return (
     <S.Container>
-      MainPage
       <MainCarouselSection />
       <ClubSection />
     </S.Container>
