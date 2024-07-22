@@ -6,8 +6,10 @@ export const Container = styled.div`
 
 export const ClubImg = styled.img`
   display: flex;
-  margin: 0 auto;
   width: 300px;
+  margin: 0 auto;
 `
 
-export const ClubLink = styled.a``
+export const ClubLink = styled.a`
+  text-decoration: none;
+`

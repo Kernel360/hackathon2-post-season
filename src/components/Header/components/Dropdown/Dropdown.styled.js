@@ -2,15 +2,16 @@ import styled from 'styled-components'
 
 export const Container = styled.div`
   position: absolute;
-  top: 45px;
   z-index: 100;
-
-  border-radius: 10px;
+  top: 45px;
 
   display: flex;
   flex-direction: column;
+
   width: 180px;
   margin: 0 auto;
+
+  border-radius: 10px;
 `
 
 export const SiteContainer = styled.div`
@@ -20,13 +21,14 @@ export const SiteContainer = styled.div`
 
 export const Item = styled.div`
   box-sizing: border-box;
+
   :hover {
     background-color: #f8f9fa;
   }
 `
 
 export const TitleSection = styled.div`
-  padding: 0px 8px;
+  padding: 0 8px;
 `
 
 export const Title = styled.div`
