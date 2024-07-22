@@ -4,7 +4,7 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
 
-  width: 1320px;
+  max-width: 1320px;
   margin: 0 auto;
   padding: 85px 60px 45px;
 `
@@ -51,46 +51,9 @@ export const Title = styled.div`
 
 export const SubTitle = styled.div`
   /* font-family: 'Plus Jakarta Sans'; */
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 500;
   line-height: 24px;
-  text-align: left;
-  letter-spacing: -0.02em;
-`
-
-export const InfoSection = styled.div`
-  display: flex;
-  gap: 130px;
-`
-
-export const Info = styled.div`
-  display: flex;
-`
-
-export const InfoTitle = styled.div`
-  margin-bottom: 20px;
-
-  /* font-family: 'Plus Jakarta Sans'; */
-  font-size: 20px;
-  font-weight: 600;
-  line-height: 30px;
-  color: rgb(26 32 44 / 100%);
-  text-align: left;
-  letter-spacing: -0.02em;
-`
-
-export const InfoValueSection = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-`
-
-export const InfoValue = styled.div`
-  /* font-family: 'Plus Jakarta Sans'; */
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 24px;
-  color: rgb(19 19 19 / 60%);
   text-align: left;
   letter-spacing: -0.02em;
 `
@@ -107,15 +70,5 @@ export const Source = styled.div`
   line-height: 24px;
   color: rgb(26 32 44 / 100%);
   text-align: left;
-  letter-spacing: -0.02em;
-`
-
-export const Policy = styled.div`
-  /* font-family: 'Plus Jakarta Sans'; */
-  font-size: 16px;
-  font-weight: 600;
-  line-height: 24px;
-  color: rgb(26 32 44 / 100%);
-  text-align: right;
   letter-spacing: -0.02em;
 `

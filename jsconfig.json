@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "baseUrl": "src",
+    "paths": {
+      "@/*": ["src/*"]
+    },
+    "types": ["vite-plugin-svgr/client"]
+  },
+  "include": ["src"]
+}
