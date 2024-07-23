@@ -8,6 +8,7 @@ const { kakao } = window
 
 function PickerMapSection() {
   const params = useParams()
+  const stadiumLocation = getStadiumLocation(params.stadiumName).location
 
   const [locationState, setLocationState] = useState({
     center: {
@@ -41,7 +42,7 @@ function PickerMapSection() {
       }
     }
 
-    geocoder.addressSearch(getStadiumLocation(params.stadiumName), callback)
+    geocoder.addressSearch(stadiumLocation, callback)
   }, [])
 
   return (
