@@ -1,6 +1,6 @@
 // Action Types
-const ACTION_TYPE_INCREASE = 'increase'
-const ACTION_TYPE_DECREASE = 'decrease'
+export const ACTION_TYPE_INCREASE = 'increase'
+export const ACTION_TYPE_DECREASE = 'decrease'
 
 // Action Creators 작성하기
 export function increaseActionCreator() {
