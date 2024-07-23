@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import * as S from './ClubSection.styled'
 
 const CLUB_INFO = [
@@ -15,11 +16,11 @@ function ClubSection() {
   return (
     <S.Container>
       {CLUB_INFO.map(club => (
-        <a href={`stadium/${club.link}`}>
+        <Link to={`stadium/${club.link}`} key={club.title}>
           <S.Item key={club.title}>
             <div>{club.title}</div>
           </S.Item>
-        </a>
+        </Link>
       ))}
     </S.Container>
   )
