@@ -3,7 +3,10 @@ import styled from 'styled-components'
 export const Container = styled.div`
   display: flex;
   flex-wrap: wrap;
+  gap: 30px;
   justify-content: center;
+
+  padding: 120px 0 60px;
 `
 
 export const Item = styled.div`

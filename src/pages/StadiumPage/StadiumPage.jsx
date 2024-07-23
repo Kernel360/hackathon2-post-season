@@ -47,8 +47,8 @@ function StadiumPage() {
       <Map
         center={state.center}
         style={{
-          width: '100%',
-          height: 'calc(100vh - 109px)',
+          width: '80%',
+          height: '600px',
           marginTop: '48px',
         }}
         level={3}

@@ -7,10 +7,6 @@ import useBooleanState from '../../hooks/utils/useBooleanState'
 import ball from '../../assets/png/ball.png'
 import Dropdown from './components/Dropdown'
 
-// import YellowDotIcon from '@/assets/svg/dots/yellowDot.svg?react'
-
-// '../../assets/svg/chevron-up.svg?react'
-
 function Header() {
   const { value: isDropdownView, toggle, setFalse } = useBooleanState()
 
