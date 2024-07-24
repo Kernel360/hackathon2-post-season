@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-function useSearchPlaces(center) {
+function useSearchPlacesForKeyword(center) {
   const [search, setSearch] = useState([])
 
   const searchPlaces = keyword => {
@@ -30,4 +30,4 @@ function useSearchPlaces(center) {
   return { search, searchPlaces }
 }
 
-export default useSearchPlaces
+export default useSearchPlacesForKeyword

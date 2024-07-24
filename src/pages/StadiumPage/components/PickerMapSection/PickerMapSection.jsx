@@ -1,35 +1,55 @@
 import { Map, MapMarker } from 'react-kakao-maps-sdk'
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
+
 import * as S from './PickerMapSection.styled'
 import { getStadiumLocation } from '../../../../utils/getStadiumLocation'
-import { KEYWORD_LIST } from '../../../../utils/constants/mapKeywordList'
+
 import useGeocoding from '../../hooks/useGeocoding'
-import useSearchPlaces from '../../hooks/useSearchPlaces'
+
+import useSearchPlacesForLocation from '../../hooks/useSearchPlacesForLocation'
+
+import useGetParkInfo from '../../../../hooks/apis/useGetParkInfo'
 
 function PickerMapSection() {
   const params = useParams()
+
   const stadiumLocation = getStadiumLocation(params.stadiumName).location
 
-  const [openMarkerInfo, setOpenMarkerInfo] = useState(null)
+  // const [openMarkerInfo, setOpenMarkerInfo] = useState(null)
 
   const locationState = useGeocoding(stadiumLocation)
-  const { search, searchPlaces } = useSearchPlaces(locationState.center)
 
-  console.log('openMarkerInfo', openMarkerInfo)
+  // console.log('openMarkerInfo', openMarkerInfo)
+
+  const [parkInfo, setParkInfo] = useState([])
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const data = await useGetParkInfo()
+      setParkInfo(data)
+      setLoading(false)
+    }
+
+    fetchData()
+  }, [])
+
+  console.log('parkInfo', parkInfo)
+
+  const addresses = parkInfo.map(park => park.RDNMADR)
+
+  console.log('addresses', addresses) // 주소 리스트
+
+  addresses.map(address => console.log(address))
+  const markers = useSearchPlacesForLocation(addresses)
+
+  if (loading) {
+    return <div>Loading...</div>
+  }
 
   return (
     <S.Container>
-      <S.CategoryButtonSection>
-        {KEYWORD_LIST.map(keyword => (
-          <S.Button
-            key={keyword.id}
-            onClick={() => searchPlaces(keyword.value)}
-          >
-            {keyword.emoji + keyword.value}
-          </S.Button>
-        ))}
-      </S.CategoryButtonSection>
       <Map
         center={locationState.center}
         style={{
@@ -52,20 +72,34 @@ function PickerMapSection() {
             // },
           }}
         />
-        {search.map(data => (
+        {markers.map(marker => (
           <MapMarker
-            key={data.id}
-            onClick={() => setOpenMarkerInfo(data)}
-            position={{ lat: data.y, lng: data.x }}
+            key={marker.address}
+            position={{ lat: marker.lat, lng: marker.lng }}
             image={{
               src: 'https://cdn-icons-png.flaticon.com/128/2098/2098567.png',
-              size: {
-                width: 35,
-                height: 35,
-              },
+              size: { width: 35, height: 35 },
             }}
           />
         ))}
+
+        {/* {markers.map(marker => (
+          <MapMarker
+            key={marker.address}
+            position={{ lat: marker.lat, lng: marker.lng }}
+            // onClick={() => setOpenMarkerInfo(marker)}
+            image={{
+              src: 'https://cdn-icons-png.flaticon.com/128/2098/2098567.png',
+              size: { width: 35, height: 35 },
+            }}
+          >
+            {openMarkerInfo && openMarkerInfo.address === marker.address && (
+              <div style={{ padding: '5px', color: '#000' }}>
+                {marker.address}
+              </div>
+            )}
+          </MapMarker>
+        ))} */}
       </Map>
     </S.Container>
   )
