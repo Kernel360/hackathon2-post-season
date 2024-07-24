@@ -44,12 +44,15 @@ function StadiumPage() {
 
   return (
     <S.Container>
+      <S.WeatherArea>
+        <span>날씨 위젯</span>
+      </S.WeatherArea>
       <Map
         center={state.center}
         style={{
           width: '80%',
           height: '600px',
-          marginTop: '48px',
+          marginTop: '10px',
         }}
         level={3}
       >
