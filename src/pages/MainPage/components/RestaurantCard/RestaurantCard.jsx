@@ -1,4 +1,4 @@
-import * as S from './RestarurantCard.styled'
+import * as S from './RestaurantCard.styled'
 
 function RestarurantCard() {
   return (
