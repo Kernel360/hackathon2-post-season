@@ -1,52 +1,35 @@
 import { Map, MapMarker } from 'react-kakao-maps-sdk'
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { useParams } from 'react-router-dom'
 import * as S from './PickerMapSection.styled'
 import { getStadiumLocation } from '../../../../utils/getStadiumLocation'
-
-const { kakao } = window
+import { KEYWORD_LIST } from '../../../../utils/constants/mapKeywordList'
+import useGeocoding from '../../hooks/useGeocoding'
+import useSearchPlaces from '../../hooks/useSearchPlaces'
 
 function PickerMapSection() {
   const params = useParams()
   const stadiumLocation = getStadiumLocation(params.stadiumName).location
 
-  const [locationState, setLocationState] = useState({
-    center: {
-      lat: 33.450701,
-      lng: 126.570667,
-    },
-    errMsg: null,
-    isLoading: true,
-  })
+  const [openMarkerInfo, setOpenMarkerInfo] = useState(null)
 
-  useEffect(() => {
-    const geocoder = new kakao.maps.services.Geocoder()
+  const locationState = useGeocoding(stadiumLocation)
+  const { search, searchPlaces } = useSearchPlaces(locationState.center)
 
-    const callback = function (result, status) {
-      if (status === kakao.maps.services.Status.OK) {
-        const newSearch = result[0]
-
-        setLocationState({
-          center: {
-            lat: parseFloat(newSearch.y),
-            lng: parseFloat(newSearch.x),
-          },
-          isLoading: false,
-        })
-      } else {
-        setLocationState(prev => ({
-          ...prev,
-          errMsg: '주소 변환에 실패했어요.',
-          isLoading: false,
-        }))
-      }
-    }
-
-    geocoder.addressSearch(stadiumLocation, callback)
-  }, [])
+  console.log('openMarkerInfo', openMarkerInfo)
 
   return (
     <S.Container>
+      <S.CategoryButtonSection>
+        {KEYWORD_LIST.map(keyword => (
+          <S.Button
+            key={keyword.id}
+            onClick={() => searchPlaces(keyword.value)}
+          >
+            {keyword.emoji + keyword.value}
+          </S.Button>
+        ))}
+      </S.CategoryButtonSection>
       <Map
         center={locationState.center}
         style={{
@@ -64,8 +47,25 @@ function PickerMapSection() {
               width: 50,
               height: 50,
             },
+            // options: {
+            //   offset: { x: 27, y: 69 },
+            // },
           }}
         />
+        {search.map(data => (
+          <MapMarker
+            key={data.id}
+            onClick={() => setOpenMarkerInfo(data)}
+            position={{ lat: data.y, lng: data.x }}
+            image={{
+              src: 'https://cdn-icons-png.flaticon.com/128/2098/2098567.png',
+              size: {
+                width: 35,
+                height: 35,
+              },
+            }}
+          />
+        ))}
       </Map>
     </S.Container>
   )
