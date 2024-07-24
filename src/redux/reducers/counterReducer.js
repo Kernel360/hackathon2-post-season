@@ -1,7 +1,7 @@
 // Action Types import 하는 코드 작성
 import {
-  default as ACTION_TYPE_DECREASE,
-  default as ACTION_TYPE_INCREASE,
+  ACTION_TYPE_DECREASE,
+  ACTION_TYPE_INCREASE,
 } from '../actions/counterAction'
 
 // 초기 상태 작성
@@ -17,7 +17,7 @@ export const initialState = {
 // 2. 리듀서에 어떤 변화 줘야 할지 정의하기
 
 // Reducer 작성하기
-function counterReducer(state = initialState, action) {
+function counterReducer(action, state = initialState) {
   // action이 없는 경우 state 리턴하는 코드 작성
   if (!action) {
     return state
