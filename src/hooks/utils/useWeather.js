@@ -32,13 +32,7 @@ const useWeather = (latitude, longitude) => {
           },
         })
         const { data } = response
-        if (
-          !data ||
-          !data.response ||
-          !data.response.body ||
-          !data.response.body.items ||
-          !data.response.body.items.item.length
-        ) {
+        if (!data.response.body) {
           if (isCurrentTimeRequired) {
             await fetchWeather(false)
           } else {
