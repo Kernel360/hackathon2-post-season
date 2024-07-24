@@ -1,30 +1,15 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
+import getCurrentDate from '@/utils/date/getCurrentDate.js'
+import getCurrentSharpTime from '@/utils/date/getCurrentSharpTime.js'
 
-function getCurrentDate() {
-  const now = new Date()
-  const year = now.getFullYear()
-  const month = (now.getMonth() + 1).toString().padStart(2, '0')
-  const date = now.getDate().toString().padStart(2, '0')
-  return `${year}${month}${date}`
-}
-function getCurrentSharpTime(isCurrentTimeRequired) {
-  const now = new Date()
-  let hours
-  if (isCurrentTimeRequired) {
-    hours = now.getHours().toString().padStart(2, '0')
-  } else {
-    hours = (now.getHours() - 1).toString().padStart(2, '0')
-  }
-  return `${hours}00`
-}
 const useWeather = (latitude, longitude) => {
   const [weatherData, setWeatherData] = useState(null)
   const [error, setError] = useState(null)
 
   useEffect(() => {
     const fetchWeather = async (isCurrentTimeRequired = true) => {
-      const serviceKey = `D1ZwAWGHbxbJAuxI9mpTo1P0JHF0w8PPZOFO0RNtR/xk7vNZO5Ls0ympXujmbCsj3Krsycp+5EaDLMP5BpUYtQ==`
+      const serviceKey = `F2tl5d/WnzODJeNwAy+pHFW5WgA57X7fcaTNPse/rEUfd1StDJWqJglkWMjT04qOa+YCyp0plNd+rEJCFgFsFw==`
       const pageNo = `1`
       const numOfRows = `60`
       const dataType = `json`
@@ -68,7 +53,7 @@ const useWeather = (latitude, longitude) => {
       }
     }
     fetchWeather()
-  }, [latitude, longitude])
+  }, [])
   return { weatherData, error }
 }
 

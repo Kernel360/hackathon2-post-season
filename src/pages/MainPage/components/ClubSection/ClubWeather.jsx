@@ -24,22 +24,22 @@ function ClubWeather({ club }) {
   const SkyStatus = getWeatherByCategory('SKY')[0].fcstValue
   const Temp = getWeatherByCategory('T1H')[0].fcstValue
   const Wind = getWeatherByCategory('WSD')[0].fcstValue
-  function getImageBySkyStatus(status) {
-    switch (status) {
-      case 1:
-        return
-      case 2:
-      case 3:
-      case 4:
-      default:
-        return `can't get image`
-    }
-  }
+  // function getImageBySkyStatus(status) {
+  //   switch (status) {
+  //     case 1:
+  //       return
+  //     case 2:
+  //     case 3:
+  //     case 4:
+  //     default:
+  //       return `can't get image`
+  //   }
+  // }
 
   console.log(`******* weatherInfo = ${SkyStatus}`)
   return (
     <S.WeatherArea>
-      <div>{SkyStatus}</div>
+      <div>{Wind}</div>
       <div>{Temp}°C</div>
     </S.WeatherArea>
   )
