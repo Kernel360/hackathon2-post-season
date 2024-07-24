@@ -25,5 +25,7 @@ module.exports = {
     'import/prefer-default-export': 'off',
     'react/react-in-jsx-scope': 'off',
     'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
+    'react/prop-types': 'off', // prop-type 체크 규칙 비활성화
+    'import/extensions': 'off', // import/extensions 규칙 비활성화
   },
 }
