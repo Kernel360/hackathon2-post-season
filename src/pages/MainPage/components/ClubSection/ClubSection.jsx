@@ -23,7 +23,6 @@ function ClubSection() {
             <div>{club.title}</div>
           </S.Item>
         </S.Link>
-
       ))}
     </S.Container>
   )
