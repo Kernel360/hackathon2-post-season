@@ -15,7 +15,6 @@ function StadiumWeather({ lat, lng }) {
   if (!weatherData) {
     return <div>loading...</div>
   }
-  console.log(JSON.stringify(weatherData, null, 2))
   function getWeatherByCategory(category) {
     const weatherItems = weatherData.response.body.items.item.filter(
       item => item.category === category
