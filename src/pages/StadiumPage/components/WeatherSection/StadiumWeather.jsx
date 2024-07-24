@@ -21,15 +21,15 @@ function StadiumWeather({ lat, lng }) {
     )
     return weatherItems
   }
-  const SKY = getImageBySkyStatus(getWeatherByCategory('SKY')[0].fcstValue)
-  const TEMP = getWeatherByCategory('T1H')[0].fcstValue
-  const WIND = getWeatherByCategory('WSD')[0].fcstValue
+  const sky = getImageBySkyStatus(getWeatherByCategory('SKY')[0].fcstValue)
+  const temp = getWeatherByCategory('T1H')[0].fcstValue
+  const wind = getWeatherByCategory('WSD')[0].fcstValue
 
   return (
     <S.WeatherWrapper>
-      <S.ImgSky src={SKY} alt="sky" />
-      <S.SpanTemp>{TEMP}°</S.SpanTemp>
-      <S.SpanWind>{WIND}m/s</S.SpanWind>
+      <S.ImgSky src={sky} alt="sky" />
+      <S.SpanTemp>{temp}°</S.SpanTemp>
+      <S.SpanWind>{wind}m/s</S.SpanWind>
     </S.WeatherWrapper>
   )
 }
