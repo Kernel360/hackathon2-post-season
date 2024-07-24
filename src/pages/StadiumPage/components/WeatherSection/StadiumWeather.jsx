@@ -1,25 +1,21 @@
 import React from 'react'
-import PropTypes from 'prop-types'
-import useWeather from '@/hooks/utils/useWeather.js'
-import sun from '@/assets/svg/sun.svg'
-import sunCloud from '@/assets/svg/cloud-sun.svg'
-import cloudy from '@/assets/svg/cloudy.svg'
-import rain from '@/assets/svg/cloud-rain-wind.svg'
-import * as S from './WeatherSection.styled'
-import getImageBySkyStatus from '@/utils/getImageBySkyStatus.js'
+import useWeather from '@/hooks/utils/useWeather'
+import getImageBySkyStatus from '@/utils/getImageBySkyStatus'
+import * as S from '@/pages/StadiumPage/components/WeatherSection/WeatherSection.styled'
 
-function StadiumWeather({ data }) {
-  const lat = Math.floor(data.lat).toString()
-  const lng = Math.floor(data.lng).toString()
-  const { weatherData, error } = useWeather(lat, lng)
+// eslint-disable-next-line react/prop-types
+function StadiumWeather({ lat, lng }) {
+  const latStr = Math.floor(lat).toString()
+  const lngStr = Math.floor(lng).toString()
 
+  const { weatherData, error } = useWeather(latStr, lngStr)
   if (error) {
     return <div>error: {error.message}</div>
   }
   if (!weatherData) {
     return <div>loading...</div>
   }
-
+  console.log(JSON.stringify(weatherData, null, 2))
   function getWeatherByCategory(category) {
     const weatherItems = weatherData.response.body.items.item.filter(
       item => item.category === category
@@ -30,24 +26,13 @@ function StadiumWeather({ data }) {
   const TEMP = getWeatherByCategory('T1H')[0].fcstValue
   const WIND = getWeatherByCategory('WSD')[0].fcstValue
 
-  console.log(`******* weatherInfo = ${SKY}`)
   return (
-    <S.WeatherArea>
-      <div>
-        <S.Img src={SKY} alt="sky" />
-      </div>
-      <S.Span>{TEMP}°C</S.Span>
-    </S.WeatherArea>
+    <S.WeatherWrapper>
+      <S.ImgSky src={SKY} alt="sky" />
+      <S.SpanTemp>{TEMP}°</S.SpanTemp>
+      <S.SpanWind>{WIND}m/s</S.SpanWind>
+    </S.WeatherWrapper>
   )
-}
-// PropTypes 설정
-StadiumWeather.propTypes = {
-  data: PropTypes.shape({
-    title: PropTypes.string.isRequired,
-    link: PropTypes.string.isRequired,
-    lat: PropTypes.string.isRequired,
-    lng: PropTypes.string.isRequired,
-  }).isRequired,
 }
 
 export default StadiumWeather
