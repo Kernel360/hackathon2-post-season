@@ -35,6 +35,7 @@ const useWeather = (latitude, longitude) => {
       if (!data.response.body) {
         if (isCurrentTimeRequired) {
           await fetchWeather(false)
+
         } else {
           throw new Error('유효한 데이터를 받을 수 없습니다.')
         }
@@ -59,6 +60,7 @@ const useWeather = (latitude, longitude) => {
             temperature: temperatureData,
           })
         )
+
       }
     } catch (e) {
       setError(e)
