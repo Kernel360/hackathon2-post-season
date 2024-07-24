@@ -3,7 +3,6 @@ import useWeather from '@/hooks/utils/useWeather'
 import getImageBySkyStatus from '@/utils/getImageBySkyStatus'
 import * as S from '@/pages/StadiumPage/components/WeatherSection/WeatherSection.styled'
 
-// eslint-disable-next-line react/prop-types
 function StadiumWeather({ lat, lng }) {
   const latStr = Math.floor(lat).toString()
   const lngStr = Math.floor(lng).toString()
