@@ -1,0 +1,292 @@
+{
+  "daegu": {
+    "restaurants": [
+      {
+        "name": "해피치즈스마일",
+        "description": "추후 작성 예정",
+        "category": "분식",
+        "menu": ["해 치 스 set", "아이스크림"],
+        "location": "2층"
+      },
+      {
+        "name": "웍스터",
+        "description": "추후 작성 예정",
+        "category": "중식",
+        "menu": ["이재현 빼뱀 세트", "갈릭볶음밥"],
+        "location": "1루 출입구"
+      },
+      {
+        "name": "오직떡볶이",
+        "description": "추후 작성 예정",
+        "category": "분식",
+        "menu": ["떡순세트", "밀크쉐이크"],
+        "location": "3층 1루"
+      },
+      {
+        "name": "땅땅치킨",
+        "description": "추후 작성 예정",
+        "category": "치킨",
+        "menu": ["현준's 땅!땅!세트"],
+        "location": "2층, 3층"
+      }
+    ]
+  },
+  "changwon": {
+    "restaurants": [
+      {
+        "name": "알통떡강정",
+        "description": "추후 작성 예정",
+        "category": "분식",
+        "menu": ["알통떡강정"],
+        "location": "104블럭 맞은편"
+      },
+      {
+        "name": "코아양과",
+        "description": "추후 작성 예정",
+        "category": "디저트",
+        "menu": ["밀크쉐이크", "크로플"],
+        "location": "3루 중앙쪽"
+      },
+      {
+        "name": "리얼피그",
+        "description": "추후 작성 예정",
+        "category": "분식",
+        "menu": ["NC대세닭 set"],
+        "location": "109블럭"
+      },
+      {
+        "name": "스타벅스",
+        "description": "추후 작성 예정",
+        "category": "디저트",
+        "menu": ["스타벅스 테라스 set - 구매 시 2층 테라스 관람 가능"],
+        "location": "정문"
+      }
+    ]
+  },
+  "daejeon": {
+    "restaurants": [
+      {
+        "name": "농심가락",
+        "description": "추후 작성 예정",
+        "category": "분식",
+        "menu": ["농심가락 떡볶이", "농심메밀열무냉면"],
+        "location": "3루 및 외야"
+      },
+      {
+        "name": "장충동왕족발",
+        "description": "추후 작성 예정",
+        "category": "한식",
+        "menu": ["순살족발세트"],
+        "location": "1루 및 외야"
+      },
+      {
+        "name": "스트릿츄러스",
+        "description": "추후 작성 예정",
+        "category": "디저트",
+        "menu": ["수리츄"],
+        "location": "3루 및 외야"
+      },
+      {
+        "name": "오수리",
+        "description": "추후 작성 예정",
+        "category": "분식",
+        "menu": ["홈런(몸통 + 다리)"],
+        "location": "중앙"
+      },
+      {
+        "name": "빅찹핫도그",
+        "description": "추후 작성 예정",
+        "category": "분식",
+        "menu": ["킬바사", "케이준감자모짜"],
+        "location": "3루 및 외야"
+      }
+    ]
+  },
+  "gwangju": {
+    "restaurants": [
+      {
+        "name": "마성떡볶이",
+        "description": "추후 작성 예정",
+        "category": "분식",
+        "menu": ["마성떡볶이", "찰순대"],
+        "location": "3층 1루, 3루 / 5층 3루"
+      },
+      {
+        "name": "스트릿츄러스",
+        "description": "추후 작성 예정",
+        "category": "디저트",
+        "menu": ["아이스크림 스틱 츄딥"],
+        "location": "1루 및 외야"
+      },
+      {
+        "name": "원샷치킨",
+        "description": "추후 작성 예정",
+        "category": "치킨",
+        "menu": ["커리치킨"],
+        "location": "1루, 3루 클럽라운지"
+      },
+      {
+        "name": "스테이션",
+        "description": "추후 작성 예정",
+        "category": "분식",
+        "menu": ["크림새우"],
+        "location": "3층 1루"
+      },
+      {
+        "name": "xoxo핫도그",
+        "description": "추후 작성 예정",
+        "category": "분식",
+        "menu": ["불고기 핫도그", "오리지널 포테이토"],
+        "location": "3층 1루, 3루 / 1루 클럽 라운지"
+      }
+    ]
+  },
+  "busan": {
+    "restaurants": [
+      {
+        "name": "33떡볶이",
+        "description": "추후 작성 예정",
+        "category": "분식",
+        "menu": ["갈메기세트", "오징어 후라이드"],
+        "location": "1-3, 18 / 2-3"
+      }
+    ]
+  },
+  "jamsil": {
+    "restaurants": [
+      {
+        "name": "이가네 떡볶이",
+        "description": "추후 작성 예정",
+        "category": "분식",
+        "menu": ["3번 세트(떡볶이 + 꼬치어묵 + 주먹밥)"],
+        "location": "3루 내야 끝"
+      },
+      {
+        "name": "통밥",
+        "description": "추후 작성 예정",
+        "category": "한식",
+        "menu": ["통밥삼겹살정식"],
+        "location": "B06"
+      },
+      {
+        "name": "와팡",
+        "description": "추후 작성 예정",
+        "category": "디저트",
+        "menu": ["한라봉셔벗와팡"],
+        "location": "B08"
+      },
+      {
+        "name": "원샷치킨",
+        "description": "추후 작성 예정",
+        "category": "치킨",
+        "menu": ["어니언 탱지"],
+        "location": "3루 1층 / 1루 2층"
+      }
+    ]
+  },
+  "gocheok": {
+    "restaurants": [
+      {
+        "name": "쉬림프셰프",
+        "description": "추후 작성 예정",
+        "category": "한식",
+        "menu": ["크림새우", "마라크림새우"],
+        "location": "4번 통로 맞은 편"
+      },
+      {
+        "name": "올떡",
+        "description": "추후 작성 예정",
+        "category": "분식",
+        "menu": ["떡볶이", "순대", "오뎅"],
+        "location": "9번 통로 맞은 편"
+      },
+
+      {
+        "name": "편밀밀",
+        "description": "추후 작성 예정",
+        "category": "분식",
+        "menu": ["편밀밀 만두라자냐"],
+        "location": "4번 통로 맞은 편"
+      },
+      {
+        "name": "휴온담",
+        "description": "추후 작성 예정",
+        "category": "치킨",
+        "menu": ["닭꼬치", "회오리 감자"],
+        "location": "9-10번 통로 사이"
+      },
+      {
+        "name": "감탄계",
+        "description": "추후 작성 예정",
+        "category": "치킨",
+        "menu": ["숯불양념구이", "숯불블랙데리"],
+        "location": "5-6번 통로 사이"
+      }
+    ]
+  },
+  "incheon": {
+    "restaurants": [
+      {
+        "name": "station",
+        "description": "추후 작성 예정",
+        "category": "한식",
+        "menu": ["크림새우"],
+        "location": "2층 1루"
+      },
+      {
+        "name": "커빙",
+        "description": "추후 작성 예정",
+        "category": "분식",
+        "menu": ["오레오빙수"],
+        "location": "2층 1루"
+      },
+
+      {
+        "name": "허갈닭강정",
+        "description": "추후 작성 예정",
+        "category": "분식",
+        "menu": ["매콤 닭강정"],
+        "location": "2층 1루"
+      },
+      {
+        "name": "오레오츄러스",
+        "description": "추후 작성 예정",
+        "category": "치킨",
+        "menu": ["빅아 + 츄"],
+        "location": "1층 1루"
+      },
+      {
+        "name": "버거트레일러 치즈 푸틴",
+        "description": "추후 작성 예정",
+        "category": "치킨",
+        "menu": ["치즈푸틴"],
+        "location": "1층 1루"
+      }
+    ]
+  },
+  "suwon": {
+    "restaurants": [
+      {
+        "name": "보영만두",
+        "description": "추후 작성 예정",
+        "category": "분식",
+        "menu": ["군만두", "쫄면"],
+        "location": "3루"
+      },
+      {
+        "name": "진미통닭",
+        "description": "추후 작성 예정",
+        "category": "치킨",
+        "menu": ["후라이드 치킨"],
+        "location": "3루"
+      },
+      {
+        "name": "버터구이",
+        "description": "추후 작성 예정",
+        "category": "치킨",
+        "menu": ["새우강정", "오징어 버터구이"],
+        "location": "1루"
+      }
+    ]
+  }
+}
