@@ -1,7 +1,9 @@
 import { Link } from 'react-router-dom'
 import * as S from './ClubSection.styled'
+import ClubWeather from '@/pages/MainPage/components/ClubSection/ClubWeather.jsx'
 
 const CLUB_INFO = [
+
   { title: '잠실 구장(서울)', link: 'jamsil' },
   { title: '사직 구장(부산)', link: 'busan' },
   { title: '라이온즈파크(대구)', link: 'daegu' },
@@ -16,11 +18,13 @@ function ClubSection() {
   return (
     <S.Container>
       {CLUB_INFO.map(club => (
-        <Link to={`stadium/${club.link}`} key={club.title}>
-          <S.Item key={club.title}>
+        <S.Link key={club.link} href={`stadium/${club.link}`}>
+          <S.Item>
+            <ClubWeather club={club} />
             <div>{club.title}</div>
           </S.Item>
-        </Link>
+        </S.Link>
+
       ))}
     </S.Container>
   )
