@@ -1,46 +1,30 @@
-import React from 'react'
+import useWeather from '@/hooks/utils/useWeather'
+import useSelector from '@/react-redux/hooks/useSelector'
+import getImageBySkyStatus from '@/utils/getImageBySkyStatus'
 import PropTypes from 'prop-types'
-import useWeather from '@/hooks/utils/useWeather.js'
-import sun from '@/assets/svg/sun.svg'
-import sunCloud from '@/assets/svg/sun.svg'
+import { useEffect } from 'react'
 import * as S from './ClubSection.styled'
 
 function ClubWeather({ club }) {
-  const { weatherData, error } = useWeather(club.lat, club.lon)
+  const { error } = useWeather(club.lat, club.lon)
+
+  const sky = useSelector(state => state.weather.sky)
+  const wind = useSelector(state => state.weather.wind)
+  const temperature = useSelector(state => state.weather.temperature)
+  const skySrc = getImageBySkyStatus(sky)
+
+  useEffect(() => console.log(sky, temperature), [sky, temperature])
 
   if (error) {
     return <div>error: {error.message}</div>
   }
-  if (!weatherData) {
-    return <div>loading...</div>
-  }
 
-  function getWeatherByCategory(category) {
-    const weatherItems = weatherData.response.body.items.item.filter(
-      item => item.category === category
-    )
-    return weatherItems
-  }
-  const SkyStatus = getWeatherByCategory('SKY')[0].fcstValue
-  const Temp = getWeatherByCategory('T1H')[0].fcstValue
-  const Wind = getWeatherByCategory('WSD')[0].fcstValue
-  // function getImageBySkyStatus(status) {
-  //   switch (status) {
-  //     case 1:
-  //       return
-  //     case 2:
-  //     case 3:
-  //     case 4:
-  //     default:
-  //       return `can't get image`
-  //   }
-  // }
-
-  console.log(`******* weatherInfo = ${SkyStatus}`)
   return (
     <S.WeatherArea>
-      <div>{Wind}</div>
-      <div>{Temp}°C</div>
+      <div>
+        <S.Img src={skySrc} alt="sky" />
+      </div>
+      <S.Span>{temperature}°C</S.Span>
     </S.WeatherArea>
   )
 }
