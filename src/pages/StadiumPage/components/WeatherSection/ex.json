@@ -1,0 +1,618 @@
+{
+  "response": {
+    "header": {
+      "resultCode": "00",
+      "resultMsg": "NORMAL_SERVICE"
+    },
+    "body": {
+      "dataType": "JSON",
+      "items": {
+        "item": [
+          {
+            "baseDate": "20240724",
+            "baseTime": "2030",
+            "category": "LGT",
+            "fcstDate": "20240724",
+            "fcstTime": "2100",
+            "fcstValue": "0",
+            "nx": 37,
+            "ny": 127
+          },
+          {
+            "baseDate": "20240724",
+            "baseTime": "2030",
+            "category": "LGT",
+            "fcstDate": "20240724",
+            "fcstTime": "2200",
+            "fcstValue": "0",
+            "nx": 37,
+            "ny": 127
+          },
+          {
+            "baseDate": "20240724",
+            "baseTime": "2030",
+            "category": "LGT",
+            "fcstDate": "20240724",
+            "fcstTime": "2300",
+            "fcstValue": "0",
+            "nx": 37,
+            "ny": 127
+          },
+          {
+            "baseDate": "20240724",
+            "baseTime": "2030",
+            "category": "LGT",
+            "fcstDate": "20240725",
+            "fcstTime": "0000",
+            "fcstValue": "0",
+            "nx": 37,
+            "ny": 127
+          },
+          {
+            "baseDate": "20240724",
+            "baseTime": "2030",
+            "category": "LGT",
+            "fcstDate": "20240725",
+            "fcstTime": "0100",
+            "fcstValue": "0",
+            "nx": 37,
+            "ny": 127
+          },
+          {
+            "baseDate": "20240724",
+            "baseTime": "2030",
+            "category": "LGT",
+            "fcstDate": "20240725",
+            "fcstTime": "0200",
+            "fcstValue": "0",
+            "nx": 37,
+            "ny": 127
+          },
+          {
+            "baseDate": "20240724",
+            "baseTime": "2030",
+            "category": "PTY",
+            "fcstDate": "20240724",
+            "fcstTime": "2100",
+            "fcstValue": "0",
+            "nx": 37,
+            "ny": 127
+          },
+          {
+            "baseDate": "20240724",
+            "baseTime": "2030",
+            "category": "PTY",
+            "fcstDate": "20240724",
+            "fcstTime": "2200",
+            "fcstValue": "0",
+            "nx": 37,
+            "ny": 127
+          },
+          {
+            "baseDate": "20240724",
+            "baseTime": "2030",
+            "category": "PTY",
+            "fcstDate": "20240724",
+            "fcstTime": "2300",
+            "fcstValue": "0",
+            "nx": 37,
+            "ny": 127
+          },
+          {
+            "baseDate": "20240724",
+            "baseTime": "2030",
+            "category": "PTY",
+            "fcstDate": "20240725",
+            "fcstTime": "0000",
+            "fcstValue": "0",
+            "nx": 37,
+            "ny": 127
+          },
+          {
+            "baseDate": "20240724",
+            "baseTime": "2030",
+            "category": "PTY",
+            "fcstDate": "20240725",
+            "fcstTime": "0100",
+            "fcstValue": "0",
+            "nx": 37,
+            "ny": 127
+          },
+          {
+            "baseDate": "20240724",
+            "baseTime": "2030",
+            "category": "PTY",
+            "fcstDate": "20240725",
+            "fcstTime": "0200",
+            "fcstValue": "0",
+            "nx": 37,
+            "ny": 127
+          },
+          {
+            "baseDate": "20240724",
+            "baseTime": "2030",
+            "category": "RN1",
+            "fcstDate": "20240724",
+            "fcstTime": "2100",
+            "fcstValue": "강수없음",
+            "nx": 37,
+            "ny": 127
+          },
+          {
+            "baseDate": "20240724",
+            "baseTime": "2030",
+            "category": "RN1",
+            "fcstDate": "20240724",
+            "fcstTime": "2200",
+            "fcstValue": "강수없음",
+            "nx": 37,
+            "ny": 127
+          },
+          {
+            "baseDate": "20240724",
+            "baseTime": "2030",
+            "category": "RN1",
+            "fcstDate": "20240724",
+            "fcstTime": "2300",
+            "fcstValue": "강수없음",
+            "nx": 37,
+            "ny": 127
+          },
+          {
+            "baseDate": "20240724",
+            "baseTime": "2030",
+            "category": "RN1",
+            "fcstDate": "20240725",
+            "fcstTime": "0000",
+            "fcstValue": "강수없음",
+            "nx": 37,
+            "ny": 127
+          },
+          {
+            "baseDate": "20240724",
+            "baseTime": "2030",
+            "category": "RN1",
+            "fcstDate": "20240725",
+            "fcstTime": "0100",
+            "fcstValue": "강수없음",
+            "nx": 37,
+            "ny": 127
+          },
+          {
+            "baseDate": "20240724",
+            "baseTime": "2030",
+            "category": "RN1",
+            "fcstDate": "20240725",
+            "fcstTime": "0200",
+            "fcstValue": "강수없음",
+            "nx": 37,
+            "ny": 127
+          },
+          {
+            "baseDate": "20240724",
+            "baseTime": "2030",
+            "category": "SKY",
+            "fcstDate": "20240724",
+            "fcstTime": "2100",
+            "fcstValue": "4",
+            "nx": 37,
+            "ny": 127
+          },
+          {
+            "baseDate": "20240724",
+            "baseTime": "2030",
+            "category": "SKY",
+            "fcstDate": "20240724",
+            "fcstTime": "2200",
+            "fcstValue": "3",
+            "nx": 37,
+            "ny": 127
+          },
+          {
+            "baseDate": "20240724",
+            "baseTime": "2030",
+            "category": "SKY",
+            "fcstDate": "20240724",
+            "fcstTime": "2300",
+            "fcstValue": "4",
+            "nx": 37,
+            "ny": 127
+          },
+          {
+            "baseDate": "20240724",
+            "baseTime": "2030",
+            "category": "SKY",
+            "fcstDate": "20240725",
+            "fcstTime": "0000",
+            "fcstValue": "1",
+            "nx": 37,
+            "ny": 127
+          },
+          {
+            "baseDate": "20240724",
+            "baseTime": "2030",
+            "category": "SKY",
+            "fcstDate": "20240725",
+            "fcstTime": "0100",
+            "fcstValue": "1",
+            "nx": 37,
+            "ny": 127
+          },
+          {
+            "baseDate": "20240724",
+            "baseTime": "2030",
+            "category": "SKY",
+            "fcstDate": "20240725",
+            "fcstTime": "0200",
+            "fcstValue": "3",
+            "nx": 37,
+            "ny": 127
+          },
+          {
+            "baseDate": "20240724",
+            "baseTime": "2030",
+            "category": "T1H",
+            "fcstDate": "20240724",
+            "fcstTime": "2100",
+            "fcstValue": "25",
+            "nx": 37,
+            "ny": 127
+          },
+          {
+            "baseDate": "20240724",
+            "baseTime": "2030",
+            "category": "T1H",
+            "fcstDate": "20240724",
+            "fcstTime": "2200",
+            "fcstValue": "25",
+            "nx": 37,
+            "ny": 127
+          },
+          {
+            "baseDate": "20240724",
+            "baseTime": "2030",
+            "category": "T1H",
+            "fcstDate": "20240724",
+            "fcstTime": "2300",
+            "fcstValue": "25",
+            "nx": 37,
+            "ny": 127
+          },
+          {
+            "baseDate": "20240724",
+            "baseTime": "2030",
+            "category": "T1H",
+            "fcstDate": "20240725",
+            "fcstTime": "0000",
+            "fcstValue": "25",
+            "nx": 37,
+            "ny": 127
+          },
+          {
+            "baseDate": "20240724",
+            "baseTime": "2030",
+            "category": "T1H",
+            "fcstDate": "20240725",
+            "fcstTime": "0100",
+            "fcstValue": "25",
+            "nx": 37,
+            "ny": 127
+          },
+          {
+            "baseDate": "20240724",
+            "baseTime": "2030",
+            "category": "T1H",
+            "fcstDate": "20240725",
+            "fcstTime": "0200",
+            "fcstValue": "25",
+            "nx": 37,
+            "ny": 127
+          },
+          {
+            "baseDate": "20240724",
+            "baseTime": "2030",
+            "category": "REH",
+            "fcstDate": "20240724",
+            "fcstTime": "2100",
+            "fcstValue": "95",
+            "nx": 37,
+            "ny": 127
+          },
+          {
+            "baseDate": "20240724",
+            "baseTime": "2030",
+            "category": "REH",
+            "fcstDate": "20240724",
+            "fcstTime": "2200",
+            "fcstValue": "95",
+            "nx": 37,
+            "ny": 127
+          },
+          {
+            "baseDate": "20240724",
+            "baseTime": "2030",
+            "category": "REH",
+            "fcstDate": "20240724",
+            "fcstTime": "2300",
+            "fcstValue": "95",
+            "nx": 37,
+            "ny": 127
+          },
+          {
+            "baseDate": "20240724",
+            "baseTime": "2030",
+            "category": "REH",
+            "fcstDate": "20240725",
+            "fcstTime": "0000",
+            "fcstValue": "95",
+            "nx": 37,
+            "ny": 127
+          },
+          {
+            "baseDate": "20240724",
+            "baseTime": "2030",
+            "category": "REH",
+            "fcstDate": "20240725",
+            "fcstTime": "0100",
+            "fcstValue": "95",
+            "nx": 37,
+            "ny": 127
+          },
+          {
+            "baseDate": "20240724",
+            "baseTime": "2030",
+            "category": "REH",
+            "fcstDate": "20240725",
+            "fcstTime": "0200",
+            "fcstValue": "95",
+            "nx": 37,
+            "ny": 127
+          },
+          {
+            "baseDate": "20240724",
+            "baseTime": "2030",
+            "category": "UUU",
+            "fcstDate": "20240724",
+            "fcstTime": "2100",
+            "fcstValue": "0.3",
+            "nx": 37,
+            "ny": 127
+          },
+          {
+            "baseDate": "20240724",
+            "baseTime": "2030",
+            "category": "UUU",
+            "fcstDate": "20240724",
+            "fcstTime": "2200",
+            "fcstValue": "-0.1",
+            "nx": 37,
+            "ny": 127
+          },
+          {
+            "baseDate": "20240724",
+            "baseTime": "2030",
+            "category": "UUU",
+            "fcstDate": "20240724",
+            "fcstTime": "2300",
+            "fcstValue": "-0.1",
+            "nx": 37,
+            "ny": 127
+          },
+          {
+            "baseDate": "20240724",
+            "baseTime": "2030",
+            "category": "UUU",
+            "fcstDate": "20240725",
+            "fcstTime": "0000",
+            "fcstValue": "-0.3",
+            "nx": 37,
+            "ny": 127
+          },
+          {
+            "baseDate": "20240724",
+            "baseTime": "2030",
+            "category": "UUU",
+            "fcstDate": "20240725",
+            "fcstTime": "0100",
+            "fcstValue": "-0.1",
+            "nx": 37,
+            "ny": 127
+          },
+          {
+            "baseDate": "20240724",
+            "baseTime": "2030",
+            "category": "UUU",
+            "fcstDate": "20240725",
+            "fcstTime": "0200",
+            "fcstValue": "0.2",
+            "nx": 37,
+            "ny": 127
+          },
+          {
+            "baseDate": "20240724",
+            "baseTime": "2030",
+            "category": "VVV",
+            "fcstDate": "20240724",
+            "fcstTime": "2100",
+            "fcstValue": "4",
+            "nx": 37,
+            "ny": 127
+          },
+          {
+            "baseDate": "20240724",
+            "baseTime": "2030",
+            "category": "VVV",
+            "fcstDate": "20240724",
+            "fcstTime": "2200",
+            "fcstValue": "4.2",
+            "nx": 37,
+            "ny": 127
+          },
+          {
+            "baseDate": "20240724",
+            "baseTime": "2030",
+            "category": "VVV",
+            "fcstDate": "20240724",
+            "fcstTime": "2300",
+            "fcstValue": "4.4",
+            "nx": 37,
+            "ny": 127
+          },
+          {
+            "baseDate": "20240724",
+            "baseTime": "2030",
+            "category": "VVV",
+            "fcstDate": "20240725",
+            "fcstTime": "0000",
+            "fcstValue": "4.5",
+            "nx": 37,
+            "ny": 127
+          },
+          {
+            "baseDate": "20240724",
+            "baseTime": "2030",
+            "category": "VVV",
+            "fcstDate": "20240725",
+            "fcstTime": "0100",
+            "fcstValue": "4.1",
+            "nx": 37,
+            "ny": 127
+          },
+          {
+            "baseDate": "20240724",
+            "baseTime": "2030",
+            "category": "VVV",
+            "fcstDate": "20240725",
+            "fcstTime": "0200",
+            "fcstValue": "3.4",
+            "nx": 37,
+            "ny": 127
+          },
+          {
+            "baseDate": "20240724",
+            "baseTime": "2030",
+            "category": "VEC",
+            "fcstDate": "20240724",
+            "fcstTime": "2100",
+            "fcstValue": "184",
+            "nx": 37,
+            "ny": 127
+          },
+          {
+            "baseDate": "20240724",
+            "baseTime": "2030",
+            "category": "VEC",
+            "fcstDate": "20240724",
+            "fcstTime": "2200",
+            "fcstValue": "177",
+            "nx": 37,
+            "ny": 127
+          },
+          {
+            "baseDate": "20240724",
+            "baseTime": "2030",
+            "category": "VEC",
+            "fcstDate": "20240724",
+            "fcstTime": "2300",
+            "fcstValue": "177",
+            "nx": 37,
+            "ny": 127
+          },
+          {
+            "baseDate": "20240724",
+            "baseTime": "2030",
+            "category": "VEC",
+            "fcstDate": "20240725",
+            "fcstTime": "0000",
+            "fcstValue": "175",
+            "nx": 37,
+            "ny": 127
+          },
+          {
+            "baseDate": "20240724",
+            "baseTime": "2030",
+            "category": "VEC",
+            "fcstDate": "20240725",
+            "fcstTime": "0100",
+            "fcstValue": "177",
+            "nx": 37,
+            "ny": 127
+          },
+          {
+            "baseDate": "20240724",
+            "baseTime": "2030",
+            "category": "VEC",
+            "fcstDate": "20240725",
+            "fcstTime": "0200",
+            "fcstValue": "183",
+            "nx": 37,
+            "ny": 127
+          },
+          {
+            "baseDate": "20240724",
+            "baseTime": "2030",
+            "category": "WSD",
+            "fcstDate": "20240724",
+            "fcstTime": "2100",
+            "fcstValue": "4",
+            "nx": 37,
+            "ny": 127
+          },
+          {
+            "baseDate": "20240724",
+            "baseTime": "2030",
+            "category": "WSD",
+            "fcstDate": "20240724",
+            "fcstTime": "2200",
+            "fcstValue": "4",
+            "nx": 37,
+            "ny": 127
+          },
+          {
+            "baseDate": "20240724",
+            "baseTime": "2030",
+            "category": "WSD",
+            "fcstDate": "20240724",
+            "fcstTime": "2300",
+            "fcstValue": "4",
+            "nx": 37,
+            "ny": 127
+          },
+          {
+            "baseDate": "20240724",
+            "baseTime": "2030",
+            "category": "WSD",
+            "fcstDate": "20240725",
+            "fcstTime": "0000",
+            "fcstValue": "5",
+            "nx": 37,
+            "ny": 127
+          },
+          {
+            "baseDate": "20240724",
+            "baseTime": "2030",
+            "category": "WSD",
+            "fcstDate": "20240725",
+            "fcstTime": "0100",
+            "fcstValue": "4",
+            "nx": 37,
+            "ny": 127
+          },
+          {
+            "baseDate": "20240724",
+            "baseTime": "2030",
+            "category": "WSD",
+            "fcstDate": "20240725",
+            "fcstTime": "0200",
+            "fcstValue": "3",
+            "nx": 37,
+            "ny": 127
+          }
+        ]
+      },
+      "pageNo": 1,
+      "numOfRows": 60,
+      "totalCount": 60
+    }
+  }
+}

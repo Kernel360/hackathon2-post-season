@@ -15,7 +15,6 @@ const useWeather = (latitude, longitude) => {
       const dataType = `json`
       const baseDate = getCurrentDate()
       const baseTime = getCurrentSharpTime(isCurrentTimeRequired)
-      // const baseTime = '1000'
       const url = `http://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getUltraSrtFcst`
 
       try {
@@ -32,6 +31,7 @@ const useWeather = (latitude, longitude) => {
           },
         })
         const { data } = response
+
         if (!data.response.body) {
           if (isCurrentTimeRequired) {
             await fetchWeather(false)
@@ -42,7 +42,7 @@ const useWeather = (latitude, longitude) => {
           setWeatherData(data)
         }
       } catch (e) {
-        setError(e)
+        setError(e)거
         console.error('fetch 과정 중 에러 발생', e)
       }
     }
