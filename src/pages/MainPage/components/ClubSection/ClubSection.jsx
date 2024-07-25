@@ -1,8 +1,9 @@
-import * as S from './ClubSection.styled'
+import jamsil from '@/assets/jpg/imgJamsilst.jpg'
 import lionspark from '@/assets/jpg/imgLionspark.jpeg'
 import sajik from '@/assets/jpg/imgSajikst.jpg'
-import jamsil from '@/assets/jpg/imgJamsilst.jpg'
 import ClubWeather from '@/pages/MainPage/components/ClubSection/ClubWeather.jsx'
+import { useNavigate } from 'react-router-dom'
+import * as S from './ClubSection.styled'
 // import useDispatch from '@/react-redux/hooks/useDispatch'
 
 const CLUB_INFO = [
@@ -66,15 +67,13 @@ const CLUB_INFO = [
 
 function ClubSection() {
   // const dispatch = useDispatch()
+  const navigate = useNavigate()
   return (
     <S.Container>
       {CLUB_INFO.map(club => (
         <S.Link
           key={club.link}
-          href={`stadium/${club.link}`}
-          // onClick={() =>
-          //   dispatch(setStadiumActionCreator({ stadium: club.link }))
-          // }
+          onClick={() => navigate(`stadium/${club.link}`)}
         >
           <S.Item>
             <ClubWeather club={club} />

@@ -27,7 +27,7 @@ export const WeatherArea = styled.div`
   justify-content: space-between;
   border-radius: 10px 10px 0 0;
 `
-export const Link = styled.a`
+export const Link = styled.div`
   &:link {
     color: black;
   }
