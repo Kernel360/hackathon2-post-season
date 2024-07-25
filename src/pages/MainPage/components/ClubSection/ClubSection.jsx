@@ -1,9 +1,9 @@
-import { Link } from 'react-router-dom'
-import * as S from './ClubSection.styled'
+import jamsil from '@/assets/jpg/jamsilst.jpg'
 import lionspark from '@/assets/jpg/lionspark.jpeg'
 import sajik from '@/assets/jpg/sajik.jpg'
-import jamsil from '@/assets/jpg/jamsilst.jpg'
 import ClubWeather from '@/pages/MainPage/components/ClubSection/ClubWeather.jsx'
+import useDispatch from '@/react-redux/hooks/useDispatch'
+import * as S from './ClubSection.styled'
 
 const CLUB_INFO = [
   {
@@ -65,10 +65,17 @@ const CLUB_INFO = [
 ]
 
 function ClubSection() {
+  const dispatch = useDispatch()
   return (
     <S.Container>
       {CLUB_INFO.map(club => (
-        <S.Link key={club.link} href={`stadium/${club.link}`}>
+        <S.Link
+          key={club.link}
+          href={`stadium/${club.link}`}
+          onClick={() =>
+            dispatch(setStadiumActionCreator({ stadium: club.link }))
+          }
+        >
           <S.Item>
             <ClubWeather club={club} />
             <S.ImgStadium src={club.img} />
