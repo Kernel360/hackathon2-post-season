@@ -3,17 +3,17 @@ import { useEffect } from 'react'
 import useWeather from '@/hooks/utils/useWeather'
 import useSelector from '@/react-redux/hooks/useSelector'
 import getImageBySkyStatus from '@/utils/getImageBySkyStatus'
+import PropTypes from 'prop-types'
 import * as S from './ClubSection.styled'
 
 function ClubWeather({ club }) {
-  const { error } = useWeather(club.lat, club.lon)
+  const { error } = useWeather(club.link, club.lat, club.lon)
 
-  const sky = useSelector(state => state.weather.sky)
-  const wind = useSelector(state => state.weather.wind)
-  const temperature = useSelector(state => state.weather.temperature)
-  const skySrc = getImageBySkyStatus(sky)
+  const weatherData = useSelector(
+    state => state.weather.stadiumWeatherMap[club.link]
+  )
 
-  useEffect(() => console.log(sky, temperature), [sky, temperature])
+  const skySrc = getImageBySkyStatus(weatherData?.sky)
 
   if (error) {
     return <div>error: {error.message}</div>
@@ -24,7 +24,7 @@ function ClubWeather({ club }) {
       <div>
         <S.ImgWeather src={skySrc} alt="sky" />
       </div>
-      <S.SpanTemp>{temperature}°C</S.SpanTemp>
+      <S.SpanTemp>{weatherData?.temperature}°C</S.SpanTemp>
     </S.WeatherArea>
   )
 }

@@ -1,12 +1,9 @@
 // Action Types
-export const ACTION_TYPE_WEATHER = 'setWeather'
-export const ACTION_TYPE_WIND = 'setWind'
-export const ACTION_TYPE_TEMPERATURE = 'setTemperature'
+export const ACTION_TYPE_SET_WEATHER = 'setWeather'
 
-// Action Creators 작성하기
-export function setWeatherActionCreator(weather) {
+export function setWeatherActionCreator(stadiumId, sky, wind, temperature) {
   return {
-    type: ACTION_TYPE_WEATHER,
-    payload: weather,
+    type: ACTION_TYPE_SET_WEATHER,
+    payload: { stadiumId, sky, wind, temperature },
   }
 }
