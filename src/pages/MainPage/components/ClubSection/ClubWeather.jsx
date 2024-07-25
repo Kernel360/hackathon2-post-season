@@ -22,9 +22,9 @@ function ClubWeather({ club }) {
   return (
     <S.WeatherArea>
       <div>
-        <S.Img src={skySrc} alt="sky" />
+        <S.ImgWeather src={skySrc} alt="sky" />
       </div>
-      <S.Span>{temperature}°C</S.Span>
+      <S.SpanTemp>{temperature}°C</S.SpanTemp>
     </S.WeatherArea>
   )
 }

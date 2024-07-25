@@ -14,17 +14,18 @@ export const Item = styled.div`
   background-color: #f8f9fa;
   border: 1px solid #e9ecef;
   border-radius: 10px;
+  box-shadow: 1px 1px 15px lightgrey;
 `
 export const WeatherArea = styled.div`
   box-sizing: border-box;
   width: 300px;
-  height: 50px;
-  padding: 0px 100px;
+  height: 35px;
+  padding: 0 100px;
   background-color: #a4b9e9;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-radius: 10px 10px;
+  border-radius: 10px 10px 0 0;
 `
 export const Link = styled.a`
   &:link {
@@ -42,14 +43,28 @@ export const Link = styled.a`
   text-decoration: none;
   color: black;
 `
-export const Img = styled.img`
-  width: 35px;
-  height: 35px;
-  -webkit-filter: opacity(0.5) drop-shadow(0 0 0 white);
-  filter: opacity(•5) drop-shadow(0 0 0 white);
+export const ImgWeather = styled.img`
+  width: 28px;
+  height: 28px;
 `
-export const Span = styled.span`
+export const SpanTemp = styled.span`
   margin-left: 10px;
   color: white;
-  font-size: 28px;
+  font-size: 26px;
+`
+export const ImgStadium = styled.img`
+  width: 100%;
+  height: 75%;
+  object-fit: fill;
+  display: block;
+`
+export const TitleWrapper = styled.div`
+  width: 100%;
+  height: 45px;
+  background-color: rgb(115, 141, 166);
+  font-size: 25px;
+  color: white;
+  font-weight: bold;
+  line-height: 1.6;
+  border-radius: 0 0 10px 10px;
 `
