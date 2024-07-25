@@ -1,9 +1,7 @@
-import PropTypes from 'prop-types'
-import { useEffect } from 'react'
 import useWeather from '@/hooks/utils/useWeather'
 import useSelector from '@/react-redux/hooks/useSelector'
 import getImageBySkyStatus from '@/utils/getImageBySkyStatus'
-import PropTypes from 'prop-types'
+
 import * as S from './ClubSection.styled'
 
 function ClubWeather({ club }) {
@@ -27,15 +25,6 @@ function ClubWeather({ club }) {
       <S.SpanTemp>{weatherData?.temperature}°C</S.SpanTemp>
     </S.WeatherArea>
   )
-}
-// PropTypes 설정
-ClubWeather.propTypes = {
-  club: PropTypes.shape({
-    title: PropTypes.string.isRequired,
-    link: PropTypes.string.isRequired,
-    lat: PropTypes.string.isRequired,
-    lon: PropTypes.string.isRequired,
-  }).isRequired,
 }
 
 export default ClubWeather

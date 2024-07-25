@@ -1,12 +1,9 @@
-
-import { Link } from 'react-router-dom'
 import * as S from './ClubSection.styled'
 import lionspark from '@/assets/jpg/imgLionspark.jpeg'
 import sajik from '@/assets/jpg/imgSajikst.jpg'
 import jamsil from '@/assets/jpg/imgJamsilst.jpg'
 import ClubWeather from '@/pages/MainPage/components/ClubSection/ClubWeather.jsx'
-import useDispatch from '@/react-redux/hooks/useDispatch'
-import * as S from './ClubSection.styled'
+// import useDispatch from '@/react-redux/hooks/useDispatch'
 
 const CLUB_INFO = [
   {
@@ -32,14 +29,14 @@ const CLUB_INFO = [
   },
   {
     title: '이글스파크(대전)',
-    link: 'daejaen',
+    link: 'daejeon',
     lat: '36',
     lon: '127',
     img: 'http://tong.visitkorea.or.kr/cms/resource/89/2767189_image2_1.jpg',
   },
   {
     title: '챔피언스필드(광주)',
-    link: 'ghwangju',
+    link: 'gwangju',
     lat: '35',
     lon: '126',
     img: 'https://i.namu.wiki/i/nE0HQ1tuLWpZBO0YVGGOVjpLhT052kI9lY1ybUas-IeJs_MoHsCRxkVEmTng3oZsOuYnC9sFw6oGq8oQ2yGxtVablfiDnCEonGqpAh_R8-EiSRpndHDMw5VUBE-gdAQvKlv7xBxNqqW04G2aanFXJA.webp',
@@ -60,7 +57,7 @@ const CLUB_INFO = [
   },
   {
     title: '고척 스카이돔(서울)',
-    link: 'gochuck',
+    link: 'gocheok',
     lat: '37',
     lon: '126',
     img: 'https://images.chosun.com/resizer/6r-X2wYys2ANnHNMcxKU5jo4Ehg=/961x641/smart/cloudfront-ap-northeast-1.images.arcpublishing.com/chosun/NAPZPLZHHES4FYI5OSSAGTKGCY.jpg',
@@ -68,16 +65,16 @@ const CLUB_INFO = [
 ]
 
 function ClubSection() {
-  const dispatch = useDispatch()
+  // const dispatch = useDispatch()
   return (
     <S.Container>
       {CLUB_INFO.map(club => (
         <S.Link
           key={club.link}
           href={`stadium/${club.link}`}
-          onClick={() =>
-            dispatch(setStadiumActionCreator({ stadium: club.link }))
-          }
+          // onClick={() =>
+          //   dispatch(setStadiumActionCreator({ stadium: club.link }))
+          // }
         >
           <S.Item>
             <ClubWeather club={club} />

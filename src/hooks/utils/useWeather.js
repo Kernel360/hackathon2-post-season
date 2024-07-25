@@ -1,9 +1,11 @@
+/* eslint-disable no-inner-declarations */
+import axios from 'axios'
+import { useEffect, useState } from 'react'
 import useDispatch from '@/react-redux/hooks/useDispatch'
 import { setWeatherActionCreator } from '@/redux/actions/weatherAction'
 import getCurrentDate from '@/utils/date/getCurrentDate.js'
 import getCurrentSharpTime from '@/utils/date/getCurrentSharpTime.js'
-import axios from 'axios'
-import { useEffect, useState } from 'react'
+
 const useWeather = (id, latitude, longitude) => {
   const [error, setError] = useState(null)
 
