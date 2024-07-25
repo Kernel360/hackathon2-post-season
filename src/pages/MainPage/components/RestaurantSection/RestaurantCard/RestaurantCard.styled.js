@@ -2,11 +2,13 @@ import styled from 'styled-components'
 
 export const Card = styled.div`
   width: 300px;
-  height: 370px;
-  margin: 0 auto;
+  height: 350px;
+  margin: 0 0 5% 0;
   position: relative;
   border-radius: 20px;
-  //   over-flow: hidden;
+  box-shadow:
+    0px 2px 20px 0px rgba(0, 0, 0, 0.05),
+    0px 8px 32px 0px rgba(0, 0, 0, 0.1);
 `
 
 export const CardImg = styled.img`
@@ -20,7 +22,7 @@ export const CardDescription = styled.div`
   width: calc(100% - 40px);
   background-color: white;
   border-radius: 20px;
-  height: 150px;
+  height: 130px;
   justify-content: space-evenly;
   position: absolute;
   bottom: 0;
@@ -33,7 +35,7 @@ export const CardDescriptionTitle = styled.div`
   text-align: start;
 `
 export const CardDescriptionSubTitle = styled.div`
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 400;
   text-align: start;
 `
