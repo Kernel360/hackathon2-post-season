@@ -28,9 +28,9 @@
 
 ## 구현
 ### MainPage
-     ![image](./src/assets/png/ReadmeMainpage.png)
+![image](./src/assets/png/ReadmeMainpage.png)
 ### DetailPage
-    ![image](./src/assets/png/ReadmeDetailpage.png)
+![image](./src/assets/png/ReadmeDetailpage.png)
 
 
 
