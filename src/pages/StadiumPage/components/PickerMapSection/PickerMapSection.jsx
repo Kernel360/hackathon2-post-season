@@ -76,7 +76,8 @@ function PickerMapSection() {
         style={{
           width: '100%',
           height: '600px',
-          marginTop: '48px',
+          borderRadius: '15px',
+          boxShadow: '1px 1px 10px lightgrey',
         }}
         level={3}
       >
@@ -90,7 +91,7 @@ function PickerMapSection() {
             },
           }}
         />
-        {category === '버스정류장' && (
+        {category === '버스정류장' && busStationInfo.length > 0 && (
           <>
             {busStationInfo.map(busStation => (
               <MapMarker

@@ -1,10 +1,12 @@
+/* eslint-disable no-inner-declarations */
+import axios from 'axios'
+import { useEffect, useState } from 'react'
 import useDispatch from '@/react-redux/hooks/useDispatch'
 import { setWeatherActionCreator } from '@/redux/actions/weatherAction'
 import getCurrentDate from '@/utils/date/getCurrentDate.js'
 import getCurrentSharpTime from '@/utils/date/getCurrentSharpTime.js'
-import axios from 'axios'
-import { useEffect, useState } from 'react'
-const useWeather = (latitude, longitude) => {
+
+const useWeather = (id, latitude, longitude) => {
   const [error, setError] = useState(null)
 
   const dispatch = useDispatch()
@@ -35,7 +37,6 @@ const useWeather = (latitude, longitude) => {
       if (!data.response.body) {
         if (isCurrentTimeRequired) {
           await fetchWeather(false)
-
         } else {
           throw new Error('유효한 데이터를 받을 수 없습니다.')
         }
@@ -54,13 +55,8 @@ const useWeather = (latitude, longitude) => {
         // console.log(sky, temperature)
 
         dispatch(
-          setWeatherActionCreator({
-            sky: skyData,
-            wind: windData,
-            temperature: temperatureData,
-          })
+          setWeatherActionCreator(id, skyData, windData, temperatureData)
         )
-
       }
     } catch (e) {
       setError(e)
