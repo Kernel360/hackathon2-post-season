@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types'
+import { useEffect } from 'react'
 import useWeather from '@/hooks/utils/useWeather'
 import useSelector from '@/react-redux/hooks/useSelector'
 import getImageBySkyStatus from '@/utils/getImageBySkyStatus'
