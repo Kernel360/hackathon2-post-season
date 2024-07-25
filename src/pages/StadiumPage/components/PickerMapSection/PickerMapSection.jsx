@@ -1,5 +1,5 @@
 import { Map, MapMarker } from 'react-kakao-maps-sdk'
-import React, { useState, useEffect } from 'react'
+// import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 
 import * as S from './PickerMapSection.styled'
@@ -7,46 +7,55 @@ import { getStadiumLocation } from '../../../../utils/getStadiumLocation'
 
 import useGeocoding from '../../hooks/useGeocoding'
 
-import useSearchPlacesForLocation from '../../hooks/useSearchPlacesForLocation'
+// import useSearchPlacesForLocation from '../../hooks/useSearchPlacesForLocation'
 
-import useGetParkInfo from '../../../../hooks/apis/useGetParkInfo'
+// import useGetParkInfo from '../../../../hooks/apis/useGetParkInfo'
+import useGetBusStationInfo from '@/hooks/apis/useGetBusStationInfo'
 
 function PickerMapSection() {
   const params = useParams()
 
-  const stadiumLocation = getStadiumLocation(params.stadiumName).location
+  const stadiumLocation = getStadiumLocation(params.stadiumName)
 
-  // const [openMarkerInfo, setOpenMarkerInfo] = useState(null)
+  const locationState = useGeocoding(stadiumLocation.location)
 
-  const locationState = useGeocoding(stadiumLocation)
+  // const [parkInfo, setParkInfo] = useState([])
+  // const [markers, setMarkers] = useState([])
+  const { loading: isLoading, busStationInfo } = useGetBusStationInfo(
+    1,
+    stadiumLocation.lat,
+    stadiumLocation.lng
+  ) // 얘는 야구장 주변 버스정류장 정보를 가져오는 API
 
-  // console.log('openMarkerInfo', openMarkerInfo)
-
-  const [parkInfo, setParkInfo] = useState([])
-  const [loading, setLoading] = useState(true)
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const data = await useGetParkInfo()
-      setParkInfo(data)
-      setLoading(false)
-    }
-
-    fetchData()
-  }, [])
-
-  console.log('parkInfo', parkInfo)
-
-  const addresses = parkInfo.map(park => park.RDNMADR)
-
-  console.log('addresses', addresses) // 주소 리스트
-
-  addresses.map(address => console.log(address))
-  const markers = useSearchPlacesForLocation(addresses)
-
-  if (loading) {
-    return <div>Loading...</div>
+  if (isLoading) {
+    return <div>로딩중...</div>
   }
+  console.log('busStationInfo', busStationInfo)
+
+  // useEffect(() => {
+  //   const fetchData = async () => {
+  //     const data = await useGetParkInfo()
+  //     if (JSON.stringify(data) !== JSON.stringify(parkInfo)) {
+  //       // 상태가 이전과 다를 때만 업데이트
+  //       setParkInfo(data)
+  //     }
+  //     // setParkInfo(data)
+  //   }
+
+  //   fetchData()
+  // }, [parkInfo])
+
+  // console.log('parkInfo', parkInfo)
+
+  // const addresses = parkInfo.map(park => park.RDNMADR) // 도로명 주소만 추출
+
+  // console.log('addresses', addresses)
+  // addresses.map(address => {
+  //   const sample = useSearchPlacesForLocation(address)
+  //   setMarkers([...markers, ...sample])
+  // })
+
+  // const markers = useSearchPlacesForLocation(addresses)
 
   return (
     <S.Container>
@@ -72,7 +81,7 @@ function PickerMapSection() {
             // },
           }}
         />
-        {markers.map(marker => (
+        {/* {markers.map(marker => (
           <MapMarker
             key={marker.address}
             position={{ lat: marker.lat, lng: marker.lng }}
@@ -81,7 +90,7 @@ function PickerMapSection() {
               size: { width: 35, height: 35 },
             }}
           />
-        ))}
+        ))} */}
 
         {/* {markers.map(marker => (
           <MapMarker
