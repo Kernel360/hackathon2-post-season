@@ -61,7 +61,7 @@ export const ImgStadium = styled.img`
 export const TitleWrapper = styled.div`
   width: 100%;
   height: 45px;
-  background-color: rgb(115, 141, 166);
+  background-color: rgb(89, 108, 128);
   font-size: 25px;
   color: white;
   font-weight: bold;

@@ -6,6 +6,7 @@ import imgLocation from '@/assets/svg/map-pin.svg'
 import getCurrentSharpTime from '@/utils/date/getCurrentSharpTime.js'
 import getCurrentTimeFormatted from '@/utils/date/getCurrentTimeFormatted.js'
 import StadiumWeather from '@/pages/StadiumPage/components/WeatherSection/StadiumWeather.jsx'
+import useSelector from '@/react-redux/hooks/useSelector'
 
 const WeatherSection = () => {
   const { stadiumName } = useParams()
@@ -16,6 +17,7 @@ const WeatherSection = () => {
     <S.WeatherWrapper>
       <S.SpanLocation>{stadiumInfo.location}</S.SpanLocation>
       <S.ImgLocation src={imgLocation} />
+
       <StadiumWeather lat={stadiumInfo.lat} lng={stadiumInfo.lng} />
       <S.SpanTime>{currentTime}</S.SpanTime>
     </S.WeatherWrapper>
