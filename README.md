@@ -1,6 +1,8 @@
 # Hackarthon 프로젝트
 ### PostSeason 팀
-    윤해진(팀장), 윤예진, 이재용
+   * [윤해진(팀장)](https://github.com/haejinyun)
+   * [윤예진](https://github.com/Yejin0O0)
+   * [이재용](https://github.com/enigsuss)
 ## 프로젝트 개요
     야구 경기장별 날씨, 정보를 제공하는 서비스
 ## 기획
