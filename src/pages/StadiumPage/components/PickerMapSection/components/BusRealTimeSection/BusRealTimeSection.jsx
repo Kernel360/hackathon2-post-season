@@ -1,6 +1,16 @@
 import * as S from './BusRealTimeSection.styled'
+import useGetBusRealTimeInfo from '@/hooks/apis/useGetBusRealTimeInfo'
 
-function BusRealTimeSection({ busRealTimeInfo }) {
+function BusRealTimeSection({ markerInfoForBus }) {
+  const { loading, busRealTimeInfo } = useGetBusRealTimeInfo(
+    markerInfoForBus?.citycode,
+    markerInfoForBus?.nodeid
+  )
+
+  if (loading) {
+    return <div>로딩중...</div>
+  }
+
   return (
     <S.StateSection>
       {busRealTimeInfo && busRealTimeInfo.length > 0 ? (

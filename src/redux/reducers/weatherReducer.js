@@ -27,9 +27,9 @@ function weatherReducer(state = initialState, action) {
         stadiumWeatherMap: {
           ...state.stadiumWeatherMap,
           [stadiumId]: {
-            sky: sky,
-            wind: wind,
-            temperature: temperature,
+            sky,
+            wind,
+            temperature,
           },
         },
       }

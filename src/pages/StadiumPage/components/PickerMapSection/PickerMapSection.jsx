@@ -9,17 +9,18 @@ import { KEYWORD_LIST } from '../../../../utils/constants/mapKeywordList'
 import useSearchPlacesForLocation from '../../hooks/useSearchPlacesForLocation' // 가져온 주차장 정보들을 좌표로 변환함. => 왜냐면 마커를 찍을때 위도 경도로 찍기 떄문.
 import useGetParkInfo from '../../../../hooks/apis/useGetParkInfo' // 주차장 정보를 다 가져옴
 import useGetBusStationInfo from '@/hooks/apis/useGetBusStationInfo'
-import useGetBusRealTimeInfo from '@/hooks/apis/useGetBusRealTimeInfo'
 import BusRealTimeSection from './components/BusRealTimeSection'
+import ParkRealTimeSection from './components/ParkRealTimeSection'
 
 function PickerMapSection() {
   const params = useParams()
 
-  const [naturalAddress, setNaturalAddress] = useState([]) // 주차장 주소를 담는 state
+  const [naturalAddress, setNaturalAddress] = useState([]) // 주차장의 한글 주소를 담는 state
 
   const [searchParams, setSearchParams] = useSearchParams()
 
-  const [markerInfo, setMarkerInfo] = useState() // 마커가 클릭 되었을때 담기는 정보 state
+  const [markerInfoForBus, setMarkerInfoForBus] = useState() // 마커가 클릭 되었을때 버스 담기는 정보 state
+  const [markerInfoForPark, setMarkerInfoForPark] = useState() // 마커가 클릭 되었을때 주차장 담기는 정보 state
 
   useEffect(() => {
     if (!searchParams.has('category')) {
@@ -38,10 +39,6 @@ function PickerMapSection() {
     stadiumLocation.lat,
     stadiumLocation.lng
   )
-  const { loading: isLoading2, busRealTimeInfo } = useGetBusRealTimeInfo(
-    markerInfo?.citycode,
-    markerInfo?.nodeid
-  ) // 얘는 버스정류장별 실시간 도착 정보를 가져오는 API
 
   useEffect(() => {
     const fetchData = async () => {
@@ -53,13 +50,8 @@ function PickerMapSection() {
   }, [])
 
   const markers = useSearchPlacesForLocation(naturalAddress) // 가져온 주차장 정보들을 좌표로 변환함. => 왜냐면 마커를 찍을때 위도 경도로 찍기 떄문.
-  console.log('markers', markers)
 
   if (isLoading) {
-    return <div>로딩중...</div>
-  }
-
-  if (isLoading2) {
     return <div>로딩중...</div>
   }
 
@@ -74,6 +66,9 @@ function PickerMapSection() {
           <S.Button
             key={keyword.value}
             onClick={() => handleCategoryClick(keyword.value)}
+            disabled={
+              params.stadiumName !== 'daejeon' && keyword.value === '주차장'
+            }
           >
             {keyword.emoji}
             {keyword.value}
@@ -110,6 +105,7 @@ function PickerMapSection() {
                 src: 'https://cdn-icons-png.flaticon.com/128/2098/2098567.png',
                 size: { width: 35, height: 35 },
               }}
+              onClick={() => setMarkerInfoForPark(marker)}
             />
           ))}
 
@@ -126,13 +122,18 @@ function PickerMapSection() {
                   src: 'https://cdn-icons-png.flaticon.com/128/2098/2098567.png',
                   size: { width: 35, height: 35 },
                 }}
-                onClick={() => setMarkerInfo(busStation)}
+                onClick={() => setMarkerInfoForBus(busStation)}
               />
             ))}
           </>
         )}
       </Map>
-      {markerInfo && <BusRealTimeSection busRealTimeInfo={busRealTimeInfo} />}
+      {category === '버스정류장' && markerInfoForBus && (
+        <BusRealTimeSection markerInfoForBus={markerInfoForBus} />
+      )}
+      {category === '주차장' && markerInfoForPark && (
+        <ParkRealTimeSection markerInfoForPark={markerInfoForPark} />
+      )}
     </S.Container>
   )
 }
