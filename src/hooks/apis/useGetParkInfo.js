@@ -1,69 +1,5 @@
-// // import React, { useEffect, useState } from 'react'
-// import axios from 'axios'
-
-// // const PARKING_STATUS_INFO_API_URL =
-// //   'http://apis.data.go.kr/B553881/Parking/PrkSttusInfo'
-// // const PARKING_INFO_API_URL = 'http://apis.data.go.kr/B553881/Parking/PrkOprInfo'
-// // const PARKING_STATE_API_URL =
-// //   'http://apis.data.go.kr/B553881/Parking/PrkRealtimeInfo'
-// // const PAGE_SIZE = 20
-// // const KEY =
-// //   'F2tl5d/WnzODJeNwAy+pHFW5WgA57X7fcaTNPse/rEUfd1StDJWqJglkWMjT04qOa+YCyp0plNd+rEJCFgFsFw=='
-// // const PAGE = 1
-
-// const PATH = 'http://apis.data.go.kr/6300000/GetPakpListService1/getPakpList1'
-
-// const TKEY =
-//   'F2tl5d/WnzODJeNwAy+pHFW5WgA57X7fcaTNPse/rEUfd1StDJWqJglkWMjT04qOa+YCyp0plNd+rEJCFgFsFw=='
-// const PAGE_SIZE2 = 50
-// const KEYWORD = '대전광역시 중구'
-
-// function useGetParkInfo() {
-//   // const parkingStatusInfo = axios.get(PARKING_STATUS_INFO_API_URL, {
-//   //   params: {
-//   //     serviceKey: KEY,
-//   //     numOfRows: PAGE_SIZE,
-//   //     pageNo: PAGE,
-//   //     format: 2,
-//   //   },
-//   // })
-
-//   // const ParkingInfo = axios.get(PARKING_INFO_API_URL, {
-//   //   params: {
-//   //     serviceKey: KEY,
-//   //     numOfRows: PAGE_SIZE,
-//   //     pageNo: PAGE,
-//   //     format: 2,
-//   //   },
-//   // })
-
-//   // const parkingState = axios.get(PARKING_STATE_API_URL, {
-//   //   params: {
-//   //     serviceKey: KEY,
-//   //     numOfRows: PAGE_SIZE,
-//   //     pageNo: PAGE,
-//   //     format: 2,
-//   //   },
-//   // })
-
-//   const test = axios.get(PATH, {
-//     params: {
-//       serviceKey: TKEY,
-//       numOfRows: PAGE_SIZE2,
-//       pageNo: 1, // 여기가 받는거
-//       type: 'json',
-//     },
-//   })
-
-//   return { test }
-// }
-
-// export default useGetParkInfo
-// // parkingStatusInfo, ParkingInfo, parkingState,
-
-// -------
-
 import axios from 'axios'
+import { useState, useEffect } from 'react'
 
 const PATH = 'http://apis.data.go.kr/6300000/GetPakpListService1/getPakpList1'
 const TKEY =
@@ -121,3 +57,25 @@ async function useGetParkInfo() {
 }
 
 export default useGetParkInfo
+
+// const [parkInfo, setParkInfo] = useState([])
+// const [loading, setLoading] = useState(true)
+
+// useEffect(() => {
+//   const fetchData = async () => {
+//     setLoading(true)
+//     try {
+//       const allData = await getAllPages()
+//       const filteredData = filterByKeyword(allData, KEYWORD)
+//       setParkInfo(filteredData)
+//     } catch (error) {
+//       console.error('Error fetching park info:', error)
+//     }
+//     setLoading(false)
+//   }
+
+//   fetchData()
+// }, []) // 빈 배열을 의존성 배열로 전달하여 컴포넌트가 마운트될 때 한 번만 호출
+
+// console.log('parkInfo in hook', parkInfo)
+// return { parkInfo, loading }

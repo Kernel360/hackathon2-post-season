@@ -1,42 +1,3 @@
-// import { useState, useEffect } from 'react'
-
-// function useSearchPlacesForLocation(addresses) {
-//   const [coordinates, setCoordinates] = useState([])
-
-//   useEffect(() => {
-//     const { kakao } = window
-//     const geocoder = new kakao.maps.services.Geocoder()
-
-//     const fetchCoordinates = async () => {
-//       const promises = addresses.map(address => {
-//         return new Promise(resolve => {
-//           geocoder.addressSearch(address, (result, status) => {
-//             if (status === kakao.maps.services.Status.OK) {
-//               resolve({
-//                 address,
-//                 lat: result[0].y,
-//                 lng: result[0].x,
-//               })
-//             } else {
-//               resolve(null)
-//             }
-//           })
-//         })
-//       })
-
-//       const results = await Promise.all(promises)
-//       setCoordinates(results.filter(res => res !== null))
-//     }
-
-//     fetchCoordinates()
-//   }, [addresses])
-
-//   return coordinates
-// }
-
-// export default useSearchPlacesForLocation
-
-// ----
 import { useState, useEffect } from 'react'
 
 function useSearchPlacesForLocation(addresses) {
@@ -56,7 +17,7 @@ function useSearchPlacesForLocation(addresses) {
       // 주소 리스트를 순회하면서 좌표를 비동기적으로 가져오는 함수입니다.
       const promises = addresses.map(address => {
         return new Promise(resolve => {
-          geocoder.addressSearch(address, (result, status) => {
+          geocoder.addressSearch(address.LNMADR, (result, status) => {
             if (status === kakao.maps.services.Status.OK) {
               resolve({
                 address,

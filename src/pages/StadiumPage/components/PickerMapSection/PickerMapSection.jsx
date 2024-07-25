@@ -4,19 +4,18 @@ import { useParams, useSearchParams } from 'react-router-dom'
 
 import * as S from './PickerMapSection.styled'
 import { getStadiumLocation } from '../../../../utils/getStadiumLocation'
-
 import useGeocoding from '../../hooks/useGeocoding'
 import { KEYWORD_LIST } from '../../../../utils/constants/mapKeywordList'
-
-// import useSearchPlacesForLocation from '../../hooks/useSearchPlacesForLocation'
-
-// import useGetParkInfo from '../../../../hooks/apis/useGetParkInfo'
+import useSearchPlacesForLocation from '../../hooks/useSearchPlacesForLocation' // 가져온 주차장 정보들을 좌표로 변환함. => 왜냐면 마커를 찍을때 위도 경도로 찍기 떄문.
+import useGetParkInfo from '../../../../hooks/apis/useGetParkInfo' // 주차장 정보를 다 가져옴
 import useGetBusStationInfo from '@/hooks/apis/useGetBusStationInfo'
 import useGetBusRealTimeInfo from '@/hooks/apis/useGetBusRealTimeInfo'
 import BusRealTimeSection from './components/BusRealTimeSection'
 
 function PickerMapSection() {
   const params = useParams()
+
+  const [naturalAddress, setNaturalAddress] = useState([]) // 주차장 주소를 담는 state
 
   const [searchParams, setSearchParams] = useSearchParams()
 
@@ -38,13 +37,23 @@ function PickerMapSection() {
     1,
     stadiumLocation.lat,
     stadiumLocation.lng
-  ) // 얘는 야구장 주변 버스정류장 정보를 가져오는 API
-  // 이후 이 녀석의 lat, log을 가지고 마커를 찍고 마커를 찍었을때 sate에 담아서 해당 요소로 버스 실시간 정보 api를 불러와서 아래에 띄우자ㅣ
-
+  )
   const { loading: isLoading2, busRealTimeInfo } = useGetBusRealTimeInfo(
     markerInfo?.citycode,
     markerInfo?.nodeid
   ) // 얘는 버스정류장별 실시간 도착 정보를 가져오는 API
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const data = await useGetParkInfo()
+      setNaturalAddress(data)
+    }
+
+    fetchData()
+  }, [])
+
+  const markers = useSearchPlacesForLocation(naturalAddress) // 가져온 주차장 정보들을 좌표로 변환함. => 왜냐면 마커를 찍을때 위도 경도로 찍기 떄문.
+  console.log('markers', markers)
 
   if (isLoading) {
     return <div>로딩중...</div>
@@ -91,6 +100,19 @@ function PickerMapSection() {
             },
           }}
         />
+
+        {category === '주차장' &&
+          markers.map(marker => (
+            <MapMarker
+              key={marker.address}
+              position={{ lat: marker.lat, lng: marker.lng }}
+              image={{
+                src: 'https://cdn-icons-png.flaticon.com/128/2098/2098567.png',
+                size: { width: 35, height: 35 },
+              }}
+            />
+          ))}
+
         {category === '버스정류장' && busStationInfo.length > 0 && (
           <>
             {busStationInfo.map(busStation => (
@@ -116,57 +138,3 @@ function PickerMapSection() {
 }
 
 export default PickerMapSection
-
-// useEffect(() => {
-//   const fetchData = async () => {
-//     const data = await useGetParkInfo()
-//     if (JSON.stringify(data) !== JSON.stringify(parkInfo)) {
-//       // 상태가 이전과 다를 때만 업데이트
-//       setParkInfo(data)
-//     }
-//     // setParkInfo(data)
-//   }
-
-//   fetchData()
-// }, [parkInfo])
-
-// console.log('parkInfo', parkInfo)
-
-// const addresses = parkInfo.map(park => park.RDNMADR) // 도로명 주소만 추출
-
-// console.log('addresses', addresses)
-// addresses.map(address => {
-//   const sample = useSearchPlacesForLocation(address)
-//   setMarkers([...markers, ...sample])
-// })
-
-// const markers = useSearchPlacesForLocation(addresses)
-
-/* {markers.map(marker => (
-          <MapMarker
-            key={marker.address}
-            position={{ lat: marker.lat, lng: marker.lng }}
-            image={{
-              src: 'https://cdn-icons-png.flaticon.com/128/2098/2098567.png',
-              size: { width: 35, height: 35 },
-            }}
-          />
-        ))} */
-
-/* {markers.map(marker => (
-          <MapMarker
-            key={marker.address}
-            position={{ lat: marker.lat, lng: marker.lng }}
-            // onClick={() => setOpenMarkerInfo(marker)}
-            image={{
-              src: 'https://cdn-icons-png.flaticon.com/128/2098/2098567.png',
-              size: { width: 35, height: 35 },
-            }}
-          >
-            {openMarkerInfo && openMarkerInfo.address === marker.address && (
-              <div style={{ padding: '5px', color: '#000' }}>
-                {marker.address}
-              </div>
-            )}
-          </MapMarker>
-        ))} */
