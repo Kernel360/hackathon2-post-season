@@ -91,7 +91,7 @@ const useWeather = (stadiumName, latitude, longitude) => {
     if (weatherData === undefined) {
       updateWeather()
     }
-  }, [latitude, longitude])
+  }, [])
 
   return { error }
 }
